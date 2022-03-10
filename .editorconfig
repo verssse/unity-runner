@@ -90,15 +90,71 @@ dotnet_diagnostic.IDE0110.severity = error
 ###############################
 # Naming Conventions          #
 ###############################
-# Style Definitions
-dotnet_naming_style.pascal_case_style.capitalization             = pascal_case
-# Use PascalCase for constant fields  
-dotnet_naming_rule.constant_fields_should_be_pascal_case.severity = suggestion
-dotnet_naming_rule.constant_fields_should_be_pascal_case.symbols  = constant_fields
-dotnet_naming_rule.constant_fields_should_be_pascal_case.style    = pascal_case_style
-dotnet_naming_symbols.constant_fields.applicable_kinds            = field
-dotnet_naming_symbols.constant_fields.applicable_accessibilities  = *
-dotnet_naming_symbols.constant_fields.required_modifiers          = const
+dotnet_diagnostic.IDE1006.severity = error
+
+# Locals and parameters
+dotnet_naming_symbols.locals_and_parameters_symbols.applicable_kinds = parameter, local
+dotnet_naming_symbols.locals_and_parameters_symbols.applicable_accessibilities = local
+
+dotnet_naming_style.locals_and_parameters_style.capitalization = camel_case
+
+dotnet_naming_rule.locals_and_parameters.severity = error
+dotnet_naming_rule.locals_and_parameters.symbols = locals_and_parameters_symbols
+dotnet_naming_rule.locals_and_parameters.style = locals_and_parameters_style
+
+# Private members
+dotnet_naming_symbols.private_members_symbols.applicable_kinds = property, field, event
+dotnet_naming_symbols.private_members_symbols.applicable_accessibilities = private, private_protected
+
+dotnet_naming_style.private_members_style.capitalization = camel_case
+dotnet_naming_style.private_members_style.required_prefix = _
+
+dotnet_naming_rule.private_members.severity = error
+dotnet_naming_rule.private_members.symbols = private_members_symbols
+dotnet_naming_rule.private_members.style = private_members_style
+
+# Non-private members
+
+dotnet_naming_symbols.non_private_members_symbols.applicable_kinds = property, method, field, event
+
+dotnet_naming_style.non_private_members_style.capitalization = pascal_case
+
+dotnet_naming_rule.non_private_members.severity = error
+dotnet_naming_rule.non_private_members.symbols = non_private_members_symbols
+dotnet_naming_rule.non_private_members.style = non_private_members_style
+
+# Abstract classes
+
+dotnet_naming_symbols.abstract_classes_symbols.applicable_kinds = class
+dotnet_naming_symbols.abstract_classes_symbols.required_modifiers = abstract
+
+dotnet_naming_style.abstract_classes_style.capitalization = pascal_case
+dotnet_naming_style.abstract_classes_style.required_prefix = Abstract
+
+dotnet_naming_rule.abstract_classes.severity = error
+dotnet_naming_rule.abstract_classes_symbols.symbols = abstract_classes_symbols
+dotnet_naming_rule.abstract_classes_symbols.style = abstract_classes_style
+
+# Interfaces
+
+dotnet_naming_symbols.interfaces_symbols.applicable_kinds = interface
+
+dotnet_naming_style.interfaces_style.capitalization = pascal_case
+dotnet_naming_style.interfaces_style.required_prefix = I
+
+dotnet_naming_rule.interfaces.severity = error
+dotnet_naming_rule.interfaces.symbols = interfaces_symbols
+dotnet_naming_rule.interfaces.style = interfaces_style
+
+# All other 
+
+dotnet_naming_symbols.all_other_symbols.applicable_kinds = *
+
+dotnet_naming_style.all_other_style.capitalization = pascal_case
+
+dotnet_naming_rule.all_other.severity = error
+dotnet_naming_rule.all_other.symbols = all_other_symbols
+dotnet_naming_rule.all_other.style = all_other_style
 
 ###############################
 # C# Coding Conventions       #
