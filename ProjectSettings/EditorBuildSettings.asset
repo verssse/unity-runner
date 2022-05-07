@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Ninsar/main.unity
+    path: Assets/Verse/main.unity
     guid: d946bda6d5f464fd0a00769cb78ab589
   m_configObjects: {}
